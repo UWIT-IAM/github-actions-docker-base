@@ -1,6 +1,8 @@
 FROM docker
-
 LABEL maintainer="Thomas Thorogood<goodtom@uw.edu>"
+
+WORKDIR /action
+COPY ./initialize_auth.sh ./
 
 RUN apk update && \
     apk upgrade && \
