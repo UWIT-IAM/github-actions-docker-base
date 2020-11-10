@@ -1,0 +1,10 @@
+name: Run an image
+inputs:
+  image-name:
+    description: "An image to run"
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.image-name }}

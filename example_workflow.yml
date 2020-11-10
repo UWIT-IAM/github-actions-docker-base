@@ -1,0 +1,12 @@
+name: example
+on: push
+jobs:
+  run-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./example-action
+        env:
+          GCLOUD_SECRET: ${{ secrets.GCLOUD_SECRET }}
+        with:
+          image_name: "foo"
